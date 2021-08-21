@@ -1,0 +1,40 @@
+#Complete the mean function to make it return the mean of a list of numbers
+
+data1=[49., 66, 24, 98, 37, 64, 98, 27, 56, 93, 68, 78, 22, 25, 11]
+
+def mean(data):
+    return sum(data)/len(data)
+print(mean(data1))
+
+
+#Complete the median function to make it return the median of a list of numbers
+def median(data):
+    ord = sorted(data)
+    ind = len(data)
+    return ord[ind/2]    
+print(median(data1))
+
+#Complete the mode function to make it return the mode of a list of numbers
+#opción 1:
+def mode(data):
+    modecnt = ()
+    for i in range(len(data)):
+    count = data.count(data[i])
+    if count > modecnt:
+        mode = data[i]
+        modecnt = count
+    return mode
+print(mode(data1))
+
+#opción 2 (dice no aprobado, pero no entiendo por que):
+d = dict()
+def mode(data):
+    for i in range(len(data)):
+        d[data[i]] = d.get(data[i],0) +1
+    sort = sorted([(v,k) for k,v in d.items()], reverse=True)
+    x, y = sort[0]
+    
+    return y#sort
+    #return mode
+print(mode(data1))
+
