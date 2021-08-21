@@ -38,3 +38,24 @@ def mode(data):
     #return mode
 print(mode(data1))
 
+#Complete the variance function to make it return the variance of a list of numbers
+#opcion 1:
+def mean(data):
+    return sum(data)/len(data)
+    
+def variance(data):
+    mu = mean(data)
+    for i in range(len(data)):
+        data[i] = (data[i]-mu)**2
+   
+    return mean(data)#sum(data)
+print(variance(data3))
+
+#opcion 2:
+def mean(data):
+    return sum(data)/len(data)
+    
+def variance(data):
+    mu = mean(data)
+    return mean([((i-mu)**2) for i in data])
+print(variance(data3))
